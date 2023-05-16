@@ -2,9 +2,10 @@ let timer = document.getElementById('timer');
 let timerValue = +timer.textContent;
 
 let timerID = setInterval(() => {
-  timerValue--;
-  timer.textContent = timerValue;
-  if (timerValue < 0) {
+  if (timerValue !== 0) {
+    timerValue -= 1;
+    timer.textContent = timerValue;
+  } else {
     alert('Вы победили в конкурсе!');
     clearInterval(timerID);
   }
