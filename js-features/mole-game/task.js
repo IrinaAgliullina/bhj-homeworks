@@ -2,7 +2,7 @@ const winsStatistic = document.getElementById('dead');
 const lostsStatistic = document.getElementById('lost');
 let wins = 0;
 let losts = 0;
-let getHole = function( index ) {
+let getHole = function(index) {
   return document.getElementById("hole" + index);
 }
 
@@ -22,16 +22,15 @@ for (a = 1; a <= 9; a++) {
 
 function checkGameStatus() {
   if (wins === 10) {
-    alert('Победа!');
-    deleteStatistics();
+    deleteStatistics('Победа!');
   }
   if (losts === 5) {
-    alert('Вы проиграли!');
-    deleteStatistics();
+    deleteStatistics('Вы проиграли!');
   }
 }
 
-function deleteStatistics() {
+function deleteStatistics(text) {
+  alert(text);
   winsStatistic.textContent = 0;
   wins = 0;
   lostsStatistic.textContent = 0;
